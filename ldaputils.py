@@ -67,7 +67,7 @@ class LDAP:
         try:
             try:
                 userdn = "CN=" + username + "," + BASE_DN
-                l = ldap.initialize('ldap://200.137.71.43')
+                l = ldap.initialize(LDAP_SERVER)
                 l.protocol_version = self.protocol_version
                 l.simple_bind_s(userdn, password)
                 l.unbind_s()
